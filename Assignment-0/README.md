@@ -54,9 +54,9 @@ details: https://education.github.com/
 - Vagrant makes things **super-easy**. We will provide you with appropriate setup files -- all you need to do is `vagrant up` to start the virtual machine.
 - More specifically: in the git sub-directory `Assignment-0`, run `vagrant up`. This will start the virtual machine in the background. 
 - By default, vagrant only provides **ssh** access into the virtual machine (called `Guest VM` henceforth), using `vagrant ssh`. This will work as if you are doing `ssh` into a remote machine.
-- The Guest VM will have access to the files in the current directory in the host machine (i.e., the files in the `Assignment-0` directory and its subdirectories). These are mounted in the guest VM at `/vagrant`. It would be best if you only make edits to that directory -- since those edits will survive a `vagrant destroy`. In fact, you can continue using your favorite text editor (in the host machine) to edit files, and only use the VM for running specific programs (like `postgres`, `psql`, or `ipython notebook` below).
-- If the Guest VM has a program (e.g., a Web Server) running and listening on a specific port (e.g., 80), you can access those ports from the host machine by adding them to the `VagrantFile`. The provided VagrantFile has two such mappings: for port 8888, used by iPython (mapped to port 8888 on the host machine), and for port 80, used by a Web server (mapped to port 8080 on the host machine).
-- If you just exist `ssh`, then the VM continues running in the background.
+- The Guest VM will have access to the files in the current directory in the host machine (i.e., the files in the `Assignment-0` directory and its subdirectories). These are mounted in the guest VM at `/vagrant`. It would be best if you only make edits to that directory -- since those edits will survive a `vagrant destroy`. In fact, you can continue using your favorite text editor (in the host machine) to edit files, and only use the VM for running specific programs (like `postgres`, `psql`, or `jupyter notebook` below).
+- If the Guest VM has a program (e.g., a Web Server) running and listening on a specific port (e.g., 80), you can access those ports from the host machine by adding them to the `VagrantFile`. The provided VagrantFile has two such mappings: for port 8888, used by Jupyter (mapped to port 8888 on the host machine), and for port 5432, used by PostgreSQL (mapped to port 5431 on the host machine).
+- If you just exit `ssh`, then the VM continues running in the background.
 - Some other vagrant commands that you would need to be familiar with:
     - `vagrant destroy`: will remove all traces of the guest machine from your system. It'll stop the guest machine, power it down, and remove all of the guest hard disks. Any data stored on the VM will be deleted (except in `/vagrant/`). When you are ready to work again, just do `vagrant up`.
     - `vagrant suspend`: will save the current running state of the machine and stop it. When you do `vagrant up` again, it will restart with that state.
@@ -72,7 +72,7 @@ PostgreSQL is a full-fledged and powerful relational database system, and will b
 
 PostgreSQL is already installed on your virtual machine. To get started, start the virtual machine using `vagrant up`. 
 
-The current version of PostgreSQL is 12.1. However, the version installed on the VMs is 10.10, the one available through `apt-get` right now. You will find the detailed documentation at: https://www.postgresql.org/docs/10/index.html
+The current version of PostgreSQL is 12.1. However, the version installed on the VMs is 10.18, the one available through `apt-get` right now. You will find the detailed documentation at: https://www.postgresql.org/docs/10/index.html
 
 Following steps will get you started with creating a database and populating it with the `University` dataset provided on the book website: http://www.db-book.com
 
@@ -145,11 +145,13 @@ IPython is an enhanced command shell for Python, that offers enhanced introspect
 	``` 
 This will start a server on the VM, listening on port 8888. We will access it from the **host** (as discussed above, the VagrantFile maps the 8888 port on the guest VM to the 8888 port on the host VM). To do that, simply start the browser, and point it to: http://127.0.0.1:8888
 
-* You should see the Notebooks in the `assignment1/` directory. Click to open the "Jupyter Getting Started" Notebook, and follow the instruction therein.
+* You should see the Notebooks in the `Assignment-0/` directory. Click to open the "Jupyter Getting Started" Notebook, and follow the instruction therein.
 
 * The second Notebook ("Basics of SQL") covers basics of SQL, by connecting to your local PostgreSQL instance. The Notebook also serves as an alternative mechanism to run queries. However, in order to use that, you must set up a password in `psql` using `\password` (set the password to be `vagrant`).
 
-#### Common errors / FAQs
+---
+
+### Common errors / FAQs
 
 Q. Hyper-V error while running `vagrant up`. (Stderr: VBoxManage.exe: error: Not in a hypervisor partition (HVP=0) (VERR\_NEM\_NOT\_AVAILABLE).)
 
