@@ -21,7 +21,10 @@
 </head>
 <body>
 
-These are videos from Fall 2020.
+<h3>Implementation Issues: Storage, Indexing, Query Processing, Query Optimization</h3> 
+Implementation aspects covered include storage
+devices, indexes for faster retrieval of data, query processing algorithms, and query optimization. In Fall 2021, we cover some of the topics in less depth to make room
+for NoSQL discussion.
 
 <table>
 <tr>
@@ -31,73 +34,73 @@ These are videos from Fall 2020.
 </tr>
 
 
-<tr><td> Database Implementation: 1. Storage Hierarchy </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Storage Hierarchy </td> <td>Differences between storage media; Storage hierarchy; Caches </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=13b307fc-95cb-45b9-b24b-ac4f0032c600&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Disks and SSDs </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Disks and SSDs </td> <td>History of Magnetic Disk Drives; Key components; Characteristics; Solid State Drives </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=809c5e9c-7764-4509-92d7-ac4f00209f05&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. RAID </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. RAID </td> <td> Why RAID; Different RAID levels and their pros and cons; Choosing a RAID level </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7683a9de-9daa-4e5b-9e36-ac4f00209f48&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Buffer Manager and VM </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Buffer Manager and VM </td> <td>Role of a Buffer Manager; Buffer Manager Replacement Policies; Key requirements and definitions for Buffer Manager; Brief recap of Virtual Memory and Why it matters in practice </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6bb0461b-c480-487c-8b79-ac4f00209eda&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. File Organization </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. File Organization </td> <td>Different ways the tuples mapped to disk blocks; Pros and cons of the different approaches </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=50a6fa36-d4ea-4c13-ba28-ac540183a34e&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Indexes Overview </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Indexes Overview </td> <td>How an “index” helps efficiently find tuples that satisfy a condition?; What are key characteristics of indexes? </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=8ec34788-3ee1-425e-bbc3-ac54015c876c&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. B+Tree - Basics </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. B+Tree - Basics </td> <td>B+-Trees as a multi-level index, and basic properties; How to search in a B+-Tree? </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=211c3475-c527-48ac-b7e3-ac54015c879a&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. B+Tree - Inserts </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. B+Tree - Inserts </td> <td>How to insert a new entry in the index while keeping it balanced and satisfying half-full guarantees </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a476a449-09b3-4868-8388-ac54015c87d2&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. B+Tree - Deletions </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. B+Tree - Deletions </td> <td>How to delete an existing entry in the index while keeping it balanced and satisfying half-full guarantees </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=188ab467-2d0c-40e4-9129-ac54015c8806&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Hash Indexes </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Hash Indexes </td> <td>Hash-based file organization; Static hashing-based indexes; Handling of bucket overflows; Extendable hashing and benefits; Comparing ordered and hashing indexes </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=82b8a25f-f12c-46bb-8e60-ac540183a388&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Recap </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Recap </td> <td>B-Tree Indexes; B+-Tree File Organization; Multi-key indexes; Bitmap indexes; R-Trees </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ff291fd3-08ec-4532-85a2-ac55000b42e1&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Query Processing Overview and Cost Measures </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Query Processing Overview and Cost Measures </td> <td>Main steps in Query Processing; How to measure the ”cost” of an operation so we can compare alternatives? </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a6fb1efb-94b8-4812-9bb6-ac5e015682dd&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Selections </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Selections </td> <td>Different ways to do a ”selection” operation (“where” clause) based on the properties of the predicates and the availability of indexes </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=258e662a-d778-4a26-ab99-ac5e016319c7&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Nested Loops and Index </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Nested Loops and Index </td> <td>Simplest way to do a join as a nested for loop; How to make it more efficient by accounting for “blocked” nature of data; How to use “indexes” for more efficient joins (and when they are more efficient) </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=84b1f959-55f4-4c7a-89f2-ac5f00fff2ef&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Hash Joins </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Hash Joins </td> <td>Using hashing for more quickly finding matches; Dealing with larger than memory relations; Hybrid hash joins to better utilize the memory </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=22ee8863-39ac-4328-a0f0-ac5f00fbb222&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Sorting and Merge  Joins </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Sorting and Merge  Joins </td> <td>How to sort when data doesn’t fit in memory; Using sorting for joins </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=813077e4-1348-4e5f-bc6e-ac5e0156832e&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Query Processing: Other Operators </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Query Processing: Other Operators </td> <td>Grouping and Aggregation; Duplicate elimination; Set Operations; Outer joins </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=541c0b55-9d66-459e-a13a-ac62018415ea&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Query Processing: Putting it all together </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Query Processing: Putting it all together </td> <td>How to put it all together in a query plan; Pipelining vs Materialization; Iterator Interface </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=fe42a650-58a6-41f3-9b36-ac6201841647&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Query Optimization: Overview </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Query Optimization: Overview </td> <td> Why query optimization is so important?; Key steps in query optimization </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ae7ea361-e0a2-405b-bccc-ac620184161c&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Cost Estimation Part 1 </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Cost Estimation Part 1 </td> <td> Basics of cost estimation; Statistics and how they are maintained; Frequency histograms</td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d7ee51e5-f127-4c89-a304-ac63017ce1c6&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Cost Estimation Part 2 </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Cost Estimation Part 2 </td> <td> How to estimate the sizes of selections, joins, and other operators</td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=943a307d-df55-45dc-91ef-ac630180968e&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Query Optimization: Equivalence of Relational Expressions </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Query Optimization: Equivalence of Relational Expressions </td> <td>Equivalence rules to transform query plans; How to use equivalence rules to enumerate all query plans for a query </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d5f020ba-8866-49bc-a9a2-ac6b00f45a95&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
-<tr><td> Database Implementation: 1. Query Optimization: Search Algorithms </td> <td> </td> <td>
+<tr><td> Database Implementation: 1. Query Optimization: Search Algorithms </td> <td>Exhaustive cost-based algorithms for finding the best plan; Heuristics-based optimization </td> <td>
 <iframe src="https://umd.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=bb13426b-c274-416c-83f5-ac6e00283e95&autoplay=false&offerviewer=true&showtitle=false&showbrand=false&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
 </td> </tr>
 
