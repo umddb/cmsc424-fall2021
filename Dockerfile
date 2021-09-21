@@ -4,8 +4,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update
 RUN apt-get -y upgrade
 
-RUN apt install -y python3-pip python3-dev postgresql postgresql-contrib libpq-dev jupyter-notebook vim openjdk-8-jdk
-RUN pip3 install jupyter ipython-sql psycopg2
+RUN apt install -y python3-pip python3-dev postgresql postgresql-contrib libpq-dev jupyter-notebook vim openjdk-8-jdk 
+RUN pip3 install jupyter ipython-sql psycopg2 flask flask-restful flask_cors
 
 ADD Assignment-0/smallRelationsInsertFile.sql Assignment-0/largeRelationsInsertFile.sql Assignment-0/DDL.sql /datatemp/
 ADD Assignment-1/populate-sn.sql /datatemp/
