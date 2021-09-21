@@ -21,6 +21,8 @@ cur = conn.cursor()
 cur.execute("drop table if exists influencers;")
 cur.execute("create table influencers as select u.userid, u.name, count(userid1) as num_followers from users u join follows f on (u.userid = f.userid2) group by u.userid, u.name having count(userid1) > 10;")
 
+cur.execute("drop trigger if exists update_influencers_on_insert on follows;")
+
 cur.execute("drop table if exists friends_small;")
 cur.execute("create table friends_small as select f.userid1, f.userid2 from friends f, users u1, users u2 where f.userid1 = u1.userid and f.userid2 = u2.userid and abs(extract(year from u1.birthdate) - extract(year from u2.birthdate)) < 5;")
 conn.commit()
@@ -77,13 +79,13 @@ for i in range(0, 9):
                 print("")
             elif i in [7]:
                 conn.commit()
-                query_string = "insert into follows values('userid0', 'user81')"
+                query_string = "insert into follows values('user0', 'user81')"
                 cur.execute(query_string)
                 conn.commit()
-                query_string = "insert into follows values('userid0', 'user2')"
+                query_string = "insert into follows values('user0', 'user2')"
                 cur.execute(query_string)
                 conn.commit()
-                query_string = "insert into follows values('userid1', 'user2')"
+                query_string = "insert into follows values('user1', 'user2')"
                 cur.execute(query_string)
                 conn.commit()
                 query_string = "select * from influencers order by userid"
