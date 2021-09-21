@@ -37,6 +37,7 @@ Specifically:
     - For each pair of those friends, find out if they are also friends (i.e., check if `x1` and `x2` are friends).
     - Let `N` denote the number of such pairs that are also friends themselves.
     - LCC = (2N)/(k(k-1))
+- If a node does not have any friends, then the LCC = 0 by definition
 - Write back the LCC for each `userid` into the `lcc` column created above.
 - Make sure to `commit` after you are done.
 

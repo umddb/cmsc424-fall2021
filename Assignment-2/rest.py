@@ -54,8 +54,9 @@ class User(Resource):
         # Add your code to check if the userid is present in the database
         userid_present = True
 
-        if userid_present:
-            # Add your code to insert the new tuple into the database
+        if not userid_present:
+            # Add your code to delete the user from all of the tables, including
+            # friends, users, follows, status_updates, members
             return "SUCCESS", 201
         else:
             return "FAILURE -- Unknown Userid", 404
