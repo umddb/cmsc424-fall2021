@@ -43,6 +43,14 @@ Specifically:
 
 Here are more details on LCC: https://www.centiserver.org/centrality/Local_Clustering_Coefficient/
 
+First few rows of `select * from users` afterwards look like:
+```
+userid  |        name         | birthdate  |   joined   |     lcc
+---------+---------------------+------------+------------+-------------
+user0   | Anthony Roberts     | 1998-10-20 | 2007-02-04 |  0.21904762
+user1   | Anthony Taylor      | 1967-02-09 | 2014-08-19 |  0.24242425
+```
+
 We have provided a skeleton code to get you started. As above, the code will be run using: `javac LCC.java` followed by `java -classpath
 .:./postgresql-42.2.10.jar LCC`, and should result in a modified `users` table as described above.
 
@@ -76,4 +84,4 @@ handled.
 
 
 ### Submission
-Zip the `queries.py`, `LCC.java`, and `rest.py` files into a single file, and upload it to Gradescope.
+Upload the three files `queries.py`, `LCC.java`, and `rest.py` as separate files to Gradescope (NOT as a Zip file as originally mentioned here).
