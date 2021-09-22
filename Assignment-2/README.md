@@ -1,4 +1,4 @@
-# Assignment 5: Advanced SQL 
+# Assignment 2: Advanced SQL 
 
 **This assignment is to be done by yourself, but you are welcome to discuss the assignment with others.**
 
