@@ -9,7 +9,11 @@ CORS(app)
 
 class Users(Resource):
     def get(self):
-        conn = psycopg2.connect("dbname=socialnetwork user=postgres")
+        #####################################################################################3
+        #### Important -- This is the how the connection must be done for autograder to work
+        ### But on your local machine, you may need to remove "host=..." line if this doesn't work
+        #####################################################################################3
+        conn = psycopg2.connect("host=127.0.0.1 dbname=socialnetwork user=vagrant password=vagrant")
         cur = conn.cursor()
 
         cur.execute("select * from users;")
@@ -52,9 +56,9 @@ class User(Resource):
     # Delete the user with the specific user id from the database
     def delete(self, userid):
         # Add your code to check if the userid is present in the database
-        userid_present = True
+        userid_present = False
 
-        if not userid_present:
+        if userid_present:
             # Add your code to delete the user from all of the tables, including
             # friends, users, follows, status_updates, members
             return "SUCCESS", 201
