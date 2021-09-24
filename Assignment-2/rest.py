@@ -60,7 +60,7 @@ class User(Resource):
 
         if userid_present:
             # Add your code to delete the user from all of the tables, including
-            # friends, users, follows, status_updates, members
+            # friends, users, follows, status, members, likes, etc.
             return "SUCCESS", 201
         else:
             return "FAILURE -- Unknown Userid", 404

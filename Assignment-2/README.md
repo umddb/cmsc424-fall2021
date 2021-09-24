@@ -76,7 +76,7 @@ is built using the Python `Flask` library, and couple of other packages built on
         - Use `curl`: Try `curl -X DELETE http://127.0.0.1:5000/user/user10sk3` -- it should return a default message
     - `POST /user/<userid>`: Given the information in the POST payload, this should create a new user with the specific userid
         - As above, you cannot easily run this from the web browser
-        - Instead, try: `curl -X POST -d "birthdate=xyz" -d "joined=xyz" -d 'name=linuxize' -d 'userid=linuxize@example.com' 127.0.0.1:5000/user/user1`
+        - Instead, try: `curl -X POST -d "birthdate=xyz" -d "joined=xyz" -d 'name=linuxize' 127.0.0.1:5000/user/user1`
         - We have already provided code for parsing the POST payload -- in the server output, you should see the parsed values to be inserted
 - For more details, see the `rest.py` file -- it includes specific locations where you have to make the changes as well as discusses the error conditions that need to be
 handled.
