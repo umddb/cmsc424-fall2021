@@ -10,7 +10,8 @@ In this project, you will modify a very simple database system that we have writ
 that is subclassed by RelationBlock and BTreeBlock (in `btree.py` file). A RelationBlock contains a set of tuples, and a Relation contains a list of RelationBlocks. 
 * `btree.py`: Code that implements some of the BTree functionality including search, insert, and delete (partially). The main class here is the BTreeBlock class, that 
 captures the information stored in a BTree node.
-* `queryprocessing.py`: This contains naive implementations of some of the query processing operators, including SequentialScan, NestedLoopsJoin, HashJoin, and SortMergeJoin. The operators are written using the iterator `get_next` interface, which is discussed in Chapter 12.7.2.1.
+* `queryprocessing.py`: This contains naive implementations of some of the query processing operators, including SequentialScan, NestedLoopsJoin, HashJoin, and SortMergeJoin. The operators are written using the iterator
+* `get_next` interface, which is discussed in Chapter 12.7.2.1 (6th ed; 15.7.2.1 in the 7th Edition).
 
 There are a set of parameters that control how many tuples can be stored in each RelationBlock, how many key/ptrs can be stored in each BTreeBlock, etc. You can't set those directly, but you can set the "blockSize" and also the size of a key, etc. Those parameters are in the class `Globals`, and can be modified to constructs trees of different fanouts.
 
