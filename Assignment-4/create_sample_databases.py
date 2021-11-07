@@ -61,9 +61,9 @@ def createDatabase1(name):
     r1.insertTuple(Tuple(r1_schema, ('a2', 'b2', 'c2')));
     r1.insertTuple(Tuple(r1_schema, ('a3', 'b2', 'c3')));
     r1.insertTuple(Tuple(r1_schema, ('a3', 'b3', 'c3')));
-    r2.insertTuple(Tuple(r2_schema, ('b1')));
-    r2.insertTuple(Tuple(r2_schema, ('b2')));
-    r2.insertTuple(Tuple(r2_schema, ('b3')));
+    r2.insertTuple(Tuple(r2_schema, ('b1',)));
+    r2.insertTuple(Tuple(r2_schema, ('b2',)));
+    r2.insertTuple(Tuple(r2_schema, ('b3',)));
 
 
     # With the given settings, the following B+-Tree is identical to the one shown in
