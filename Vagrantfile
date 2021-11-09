@@ -24,6 +24,7 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 5000, host: 5000
   config.vm.network "forwarded_port", guest: 5432, host: 5432
+  config.vm.network "forwarded_port", guest: 8881, host: 8881
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -70,11 +71,23 @@ Vagrant.configure("2") do |config|
      apt install -y python3-pip python3-dev openjdk-8-jdk
      apt install -y postgresql postgresql-contrib python-psycopg2 libpq-dev
      pip3 install psycopg2
-     pip3 install flask flask-restful flask_cors
+     pip3 install flask flask-restful flask_cors pymongo
+     apt install -y jupyter-notebook
+     pip3 install ipython-sql
 
      sudo -u postgres createuser -s vagrant
      echo "alter user vagrant with password 'vagrant';" | sudo -u postgres psql
      sudo -u vagrant createdb socialnetwork
      sudo -u vagrant psql socialnetwork -f /vagrant/Assignment-1/populate-sn.sql
+
+    curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add - 
+    echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+    apt update 
+    apt install -y mongodb-org 
+    systemctl enable mongod
+    systemctl start mongod
+    mongoimport --db "analytics" --collection "customers" /vagrant/Assignment-5/sample_analytics/customers.json
+    mongoimport --db "analytics" --collection "accounts" /vagrant/Assignment-5/sample_analytics/accounts.json
+    mongoimport --db "analytics" --collection "transactions" /vagrant/Assignment-5/sample_analytics/transactions.json
   SHELL
 end
