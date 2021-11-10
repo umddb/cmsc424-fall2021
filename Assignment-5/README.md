@@ -19,12 +19,16 @@ Spark can be used with the Hadoop ecosystem, including the HDFS file system and 
 As before, we have modified the VagrantFile in the top-level directory directory. Since the Spark distribution is large, we ask you to download that directly from the Spark website.
 
 1. Download the Spark package at http://spark.apache.org/downloads.html. We will use **Version 3.2.0, Pre-built for Hadoop 3.3 or later**.
-2. Move the downloaded file to the `Assignment-5/` directory (so it is available in '/vagrant' on the virtual machine, or '/data' if you are using Dockerfile), and uncompress it using: 
+2. Move the downloaded file to the `Assignment-5/` directory (so it is available in '/vagrant' on the virtual machine, or '/data/Assignment-5' if you are using Dockerfile), and uncompress it using: 
 `tar zxvf spark-3.2.0-bin-hadoop3.2.tgz`
 3. This will create a -new directory: `spark-3.2.0-bin-hadoop3.2/`. 
 4. Set the SPARKHOME variable: `export SPARKHOME=/vagrant/spark-3.2.0-bin-hadoop3.2/` (modify appropriately if it is downloaded somewhere else).
 
 We are ready to use Spark. 
+
+We have also modified the `Dockerfile` in the top-level directory. The main change you need to do when running it is to use: 
+```docker run --rm -ti -p 8881:8881 -v /Users/amol/git/umd-classes/cmsc424-fall2021:/data main:latest```
+so the port 8881 (on which Jupyter Notebook below runs) is mapped to host port 8881.
 
 ### Spark and Python
 
@@ -165,6 +169,12 @@ We are using one of the test datasets provided by MongoDB itself, called `sample
 1. `transactions`: Each document contains the transactions for a given account -- each transaction being a stock trade.
 
 You can see the raw JSONs (in MongoDB export format) in `sample_analytics` directory.
+
+The collections may already be loaded for you, but if not, you can do the following (from the `Assignment-5` directory):
+- Start the MongoDB server: `systemctl start mongod.service`
+- Load customers: `mongoimport --db "analytics" --collection "customers" sample_analytics/customers.json`
+- Load customers: `mongoimport --db "analytics" --collection "accounts" sample_analytics/accounts.json`
+- Load customers: `mongoimport --db "analytics" --collection "transactions" sample_analytics/transactions.json`
 
 ### Assignment
 As with the SQL assignment, the actual tasks are provided in the `queries.py` file. You should fill out your answers in that file. You can use `python3 MongoDBTesting.py` to run all the queries and see the results. 
