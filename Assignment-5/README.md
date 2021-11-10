@@ -100,7 +100,7 @@ You should also try out the Scala and Java interfaces.
 
 ### Assignment Details
 
-We have provided a Python file: `assignment.py`, that initializes the folllowing RDDs:
+We have provided a Python file: `spark_assignment.py`, that initializes the folllowing RDDs:
 * An RDD consisting of lines from a Shakespeare play (`play.txt`)
 * An RDD consisting of lines from a log file (`NASA_logs_sample.txt`)
 * An RDD consisting of 2-tuples indicating user-product ratings from Amazon Dataset (`amazon-ratings.txt`)
@@ -149,9 +149,9 @@ Try to minimize the number of RDDs you end up creating.
 - **Task 10**: Complete a function to calculate the degree distribution of user nodes in the Amazon graph (i.e., `amazonBipartiteRDD`). In other words, calculate the degree of each user node (i.e., number of products each user has rated), and then use a reduceByKey (or aggregateByKey) to find the number of nodes with a given degree. The output should be a PairRDD where the key is the degree, and the value is the number of nodes in the graph with that degree.
 
 ### Sample results.txt File
-You can use spark-submit to run the `assignment.py` file, but it would be easier to develop with `pyspark` (by copying the commands over). 
+You can use `spark-submit` to run the `spark_assignment.py` file, but it would be easier to develop with `pyspark` (by copying the commands over). 
 
-**results.txt** shows the results of running assignment.py on our code using: `$SPARKHOME/bin/spark-submit assignment.py`
+**results.txt** shows the results of running `spark_assignment.py` on our code using: `$SPARKHOME/bin/spark-submit assignment.py`
 
 
 ## Part 2: MongoDB
@@ -173,8 +173,8 @@ You can see the raw JSONs (in MongoDB export format) in `sample_analytics` direc
 The collections may already be loaded for you, but if not, you can do the following (from the `Assignment-5` directory):
 - Start the MongoDB server: `systemctl start mongod.service`
 - Load customers: `mongoimport --db "analytics" --collection "customers" sample_analytics/customers.json`
-- Load customers: `mongoimport --db "analytics" --collection "accounts" sample_analytics/accounts.json`
-- Load customers: `mongoimport --db "analytics" --collection "transactions" sample_analytics/transactions.json`
+- Load accounts: `mongoimport --db "analytics" --collection "accounts" sample_analytics/accounts.json`
+- Load transactions: `mongoimport --db "analytics" --collection "transactions" sample_analytics/transactions.json`
 
 ### Assignment
 As with the SQL assignment, the actual tasks are provided in the `queries.py` file. You should fill out your answers in that file. You can use `python3 MongoDBTesting.py` to run all the queries and see the results. 
