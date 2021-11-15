@@ -179,7 +179,6 @@ The collections may already be loaded for you, but if not, you can do the follow
 ### Assignment
 As with the SQL assignment, the actual tasks are provided in the `queries.py` file. You should fill out your answers in that file. You can use `python3 MongoDBTesting.py` to run all the queries and see the results. 
 
-**The assignment is not fully released yet. We will update the `queries.py` file with more details in the next day, but you can get started on the first 7 queries.**
 
 ## Submission
 Submit the `functions.py` file for Apache Spark part, and `queries.py` for MongoDB part.
