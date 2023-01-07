@@ -10,6 +10,7 @@ RUN pip3 install jupyter ipython-sql psycopg2
 ADD smallRelationsInsertFile.sql largeRelationsInsertFile.sql DDL.sql /datatemp/
 
 EXPOSE 8888
+EXPOSE 5432
 
 USER postgres
 
